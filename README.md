@@ -56,5 +56,5 @@ Show Download Alert
         alert.show()
 
         // Updating Alert
-        dialog.updateProgress(1, 50)
+        alert.updateProgress(1, 50)
 ```
