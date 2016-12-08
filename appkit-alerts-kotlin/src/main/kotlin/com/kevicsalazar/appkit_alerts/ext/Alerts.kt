@@ -18,12 +18,6 @@ fun Context.Alert(title: String, content: String, type: DialogType = DialogType.
     if (init != null) init()
 }
 
-fun Fragment.Alert(title: String, content: String, type: DialogType = DialogType.Normal, init: (StandardAlert.() -> Unit)?) = StandardAlert(context, type).apply {
-    this.titleText = title
-    this.contentText = content
-    if (init != null) init()
-}
-
 fun Context.InputTextAlert(title: String, hint: String, inputType: InputType = InputType.Text, init: (TextInputAlert.() -> Unit)?) = TextInputAlert(this).apply {
     this.titleText = title
     this.hintText = hint
@@ -42,6 +36,14 @@ fun Context.SelectorAlert(title: String, itemList: List<String>, onItemClick: (I
     this.itemList = itemList
     this.onItemClick = onItemClick
 }
+
+fun Fragment.Alert(title: String, content: String, type: DialogType = DialogType.Normal, init: (StandardAlert.() -> Unit)?) = context.Alert(title, content, type, init)
+
+fun Fragment.InputTextAlert(title: String, hint: String, inputType: InputType = InputType.Text, init: (TextInputAlert.() -> Unit)?) = context.InputTextAlert(title, hint, inputType, init)
+
+fun Fragment.DownloadAlert(title: String, content: String, init: (DownloadAlert.() -> Unit)? = null) = context.DownloadAlert(title, content, init)
+
+fun Fragment.SelectorAlert(title: String, itemList: List<String>, onItemClick: (Int) -> Unit) = context.SelectorAlert(title, itemList, onItemClick)
 
 enum class DialogType(val type: Int) {
 
