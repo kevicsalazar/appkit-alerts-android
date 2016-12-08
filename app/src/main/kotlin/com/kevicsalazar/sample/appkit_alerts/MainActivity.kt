@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnAlert1.setOnClickListener {
-            Alert("Aviso", "Hola a todos") {
+            Alert("Aviso", "Se ingresó correctamente") {
                 confirmButton("OK")
             }.show()
         }
 
         btnAlert2.setOnClickListener {
-            Alert("Aviso", "Hola a todos", DialogType.Warning) {
-                confirmButton("Yes, delete it!")
+            Alert("Aviso", "Seguro que desea eliminarlo", AlertType.Warning) {
+                confirmButton("Sí, borrar")
             }.show()
         }
 

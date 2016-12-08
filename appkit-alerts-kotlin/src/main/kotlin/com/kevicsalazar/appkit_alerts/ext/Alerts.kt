@@ -12,7 +12,7 @@ import com.kevicsalazar.appkit_alerts.TextInputAlert
  * @link kevicsalazar.com
  */
 
-fun Context.Alert(title: String, content: String, type: DialogType = DialogType.Normal, init: (StandardAlert.() -> Unit)?) = StandardAlert(this, type).apply {
+fun Context.Alert(title: String, content: String, type: AlertType = AlertType.Normal, init: (StandardAlert.() -> Unit)?) = StandardAlert(this, type).apply {
     this.titleText = title
     this.contentText = content
     if (init != null) init()
@@ -37,7 +37,7 @@ fun Context.SelectorAlert(title: String, itemList: List<String>, onItemClick: (I
     this.onItemClick = onItemClick
 }
 
-fun Fragment.Alert(title: String, content: String, type: DialogType = DialogType.Normal, init: (StandardAlert.() -> Unit)?) = context.Alert(title, content, type, init)
+fun Fragment.Alert(title: String, content: String, type: AlertType = AlertType.Normal, init: (StandardAlert.() -> Unit)?) = context.Alert(title, content, type, init)
 
 fun Fragment.InputTextAlert(title: String, hint: String, inputType: InputType = InputType.Text, init: (TextInputAlert.() -> Unit)?) = context.InputTextAlert(title, hint, inputType, init)
 
@@ -45,7 +45,7 @@ fun Fragment.DownloadAlert(title: String, content: String, init: (DownloadAlert.
 
 fun Fragment.SelectorAlert(title: String, itemList: List<String>, onItemClick: (Int) -> Unit) = context.SelectorAlert(title, itemList, onItemClick)
 
-enum class DialogType(val type: Int) {
+enum class AlertType(val type: Int) {
 
     Normal(0),
     Error(1),

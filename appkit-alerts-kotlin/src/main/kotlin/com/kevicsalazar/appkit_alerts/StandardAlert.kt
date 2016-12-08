@@ -3,14 +3,14 @@ package com.kevicsalazar.appkit_alerts
 import android.content.Context
 import android.os.Bundle
 import android.view.View
-import com.kevicsalazar.appkit_alerts.ext.DialogType
+import com.kevicsalazar.appkit_alerts.ext.AlertType
 import kotlinx.android.synthetic.main.alert_standard.view.*
 
 /**
  * @author Kevin Salazar
  * @link kevicsalazar.com
  */
-class StandardAlert(context: Context, val type: DialogType) : BaseAlert(context) {
+class StandardAlert(context: Context, val type: AlertType) : BaseAlert(context) {
 
     var titleText: String? = null
     var contentText: String? = null
@@ -39,7 +39,7 @@ class StandardAlert(context: Context, val type: DialogType) : BaseAlert(context)
             btnCancel.visibility = cancelVisible
             btnConfirm.visibility = confirmVisible
 
-            if (type == DialogType.Warning) btnConfirm.setBackgroundResource(R.drawable.bg_btn_warning)
+            if (type == AlertType.Warning) btnConfirm.setBackgroundResource(R.drawable.bg_btn_warning)
 
             btnCancel.setOnClickListener { mOnCancel?.invoke(this@StandardAlert) ?: this@StandardAlert.dismiss() }
             btnConfirm.setOnClickListener { mOnConfirm?.invoke(this@StandardAlert) ?: this@StandardAlert.dismiss() }

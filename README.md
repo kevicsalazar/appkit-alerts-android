@@ -15,7 +15,7 @@ Usage
 Show Basic Alert
 
 ```kotlin
-        Alert("Aviso", "Se ingreso correctamente") {
+        Alert("Aviso", "Se ingresó correctamente") {
             confirmButton("OK")
         }.show()
 ```
