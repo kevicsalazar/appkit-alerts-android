@@ -1,82 +1,49 @@
 package com.kevicsalazar.appkit_alerts
 
-import android.animation.Animator
-import android.animation.ValueAnimator
-import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.view.animation.*
-import com.kevicsalazar.appkit_alerts.ext.anim
 import kotlinx.android.synthetic.main.alert_download.view.*
-import com.kevicsalazar.appkit_alerts.ext.onAnimationEnd
+import android.animation.AnimatorSet
+import android.animation.AnimatorInflater
 
 
 /**
  * @author Kevin Salazar
  * @link kevicsalazar.com
  */
-class DownloadAlert(val ctx: Context) : Dialog(ctx, R.style.AppTheme_FlatDialog) {
+class DownloadAlert(context: Context) : BaseAlert(context) {
 
     var titleText: String? = null
     var contentText: String? = null
 
-    private lateinit var mDialogView: View
-
-    private lateinit var mModalInAnim: Animation
-    private lateinit var mModalOutAnim: Animation
-
-    private var pivotAnim: Animator? = null
-
-    init {
-        setCancelable(true)
-        setCanceledOnTouchOutside(false)
-    }
+    override val layout: Int get() = R.layout.alert_download
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.alert_download)
-        mDialogView = window.decorView.findViewById(android.R.id.content)
 
-        mModalInAnim = AnimationUtils.loadAnimation(ctx, R.anim.modal_in)
-        mModalOutAnim = AnimationUtils.loadAnimation(ctx, R.anim.modal_out)
-
-        mModalOutAnim.onAnimationEnd { super.dismiss() }
-
-        with(mDialogView) {
+        with(mAlertView) {
 
             tvTitle.text = titleText
             tvContent.hint = contentText
 
             progressBar.isIndeterminate = true
 
-            pivotAnim = ivArrow.anim("translationY", 0f, 20f) {
-                repeatMode = ValueAnimator.REVERSE
-                repeatCount = ValueAnimator.INFINITE
-                interpolator = DecelerateInterpolator()
-            }
-
-            pivotAnim?.start()
+            val set = AnimatorInflater.loadAnimator(context, R.animator.cloud_dowload) as AnimatorSet
+            set.setTarget(ivArrow)
+            set.start()
 
         }
 
     }
 
     fun updateProgress(progress: Int, total: Int) {
-        with(mDialogView) {
+        with(mAlertView) {
             progressBar.isIndeterminate = false
-            tvPercentProgress.text = "${(progress * total) / 100}%"
+            progressBar.progress = progress
+            progressBar.max = total
+            tvPercentProgress.text = "${(progress * 100) / total}%"
             tvStatusProgress.text = "$progress/$total"
         }
-    }
-
-    override fun onStart() {
-        mDialogView.startAnimation(mModalInAnim)
-    }
-
-    override fun dismiss() {
-        mDialogView.startAnimation(mModalOutAnim)
-        pivotAnim?.cancel()
     }
 
 }

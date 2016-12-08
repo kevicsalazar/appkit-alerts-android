@@ -3,6 +3,7 @@ package com.kevicsalazar.appkit_alerts.ext
 import android.content.Context
 import android.support.v4.app.Fragment
 import com.kevicsalazar.appkit_alerts.DownloadAlert
+import com.kevicsalazar.appkit_alerts.SelectorAlert
 import com.kevicsalazar.appkit_alerts.StandardAlert
 import com.kevicsalazar.appkit_alerts.TextInputAlert
 
@@ -11,29 +12,35 @@ import com.kevicsalazar.appkit_alerts.TextInputAlert
  * @link kevicsalazar.com
  */
 
-fun Context.UIAlert(title: String, content: String, init: (StandardAlert.() -> Unit)?) = StandardAlert(this).apply {
+fun Context.Alert(title: String, content: String, type: DialogType = DialogType.Normal, init: (StandardAlert.() -> Unit)?) = StandardAlert(this, type).apply {
     this.titleText = title
     this.contentText = content
     if (init != null) init()
 }
 
-fun Fragment.UIAlert(title: String, content: String, init: (StandardAlert.() -> Unit)?) = StandardAlert(context).apply {
+fun Fragment.Alert(title: String, content: String, type: DialogType = DialogType.Normal, init: (StandardAlert.() -> Unit)?) = StandardAlert(context, type).apply {
     this.titleText = title
     this.contentText = content
     if (init != null) init()
 }
 
-fun Context.UIInputTextAlert(title: String, hint: String, inputType: InputType = InputType.Text, init: (TextInputAlert.() -> Unit)?) = TextInputAlert(this).apply {
+fun Context.InputTextAlert(title: String, hint: String, inputType: InputType = InputType.Text, init: (TextInputAlert.() -> Unit)?) = TextInputAlert(this).apply {
     this.titleText = title
     this.hintText = hint
     this.inputType = inputType
     if (init != null) init()
 }
 
-fun Context.UIDownloadAlert(title: String, content: String, init: (DownloadAlert.() -> Unit)? = null) = DownloadAlert(this).apply {
+fun Context.DownloadAlert(title: String, content: String, init: (DownloadAlert.() -> Unit)? = null) = DownloadAlert(this).apply {
     this.titleText = title
     this.contentText = content
     if (init != null) init()
+}
+
+fun Context.SelectorAlert(title: String, itemList: List<String>, onItemClick: (Int) -> Unit) = SelectorAlert(this).apply {
+    this.titleText = title
+    this.itemList = itemList
+    this.onItemClick = onItemClick
 }
 
 enum class DialogType(val type: Int) {

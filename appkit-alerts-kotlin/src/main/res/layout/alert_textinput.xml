@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="290dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:background="@drawable/bg_dialog"
-    android:orientation="vertical"
-    android:padding="16dp">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="290dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/bg_dialog"
+              android:orientation="vertical"
+              android:padding="16dp">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        tools:text="Titulo" />
+        tools:text="Titulo"/>
 
     <EditText
         android:id="@+id/etInput"
@@ -24,7 +24,7 @@
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="14sp"
-        tools:hint="Ingresar algo" />
+        tools:hint="Ingresar algo"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,9 +40,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/bg_btn_cancel"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingStart="8dp"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            tools:text="Cancel" />
+            tools:text="Cancel"/>
 
         <Button
             android:id="@+id/btnConfirm"
@@ -52,9 +56,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/bg_btn_confirm"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingStart="8dp"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
-            tools:text="Ok" />
+            tools:text="Ok"/>
 
     </LinearLayout>
 
