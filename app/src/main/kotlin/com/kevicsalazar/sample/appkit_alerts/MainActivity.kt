@@ -35,9 +35,11 @@ class MainActivity : AppCompatActivity() {
             }.show()
         }
 
+        val users = listOf("Kevin", "Kelly", "Juan", "Cristina")
+
         btnAlert4.setOnClickListener {
-            SelectorAlert("Aviso", listOf("Kevin", "Kelly", "Juan", "Cristina")) {
-                Log.e("Selected", "$it")
+            SelectorAlert("Aviso", users) {
+                Log.e("Selected", users[it])
             }.show()
         }
 
