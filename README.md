@@ -52,16 +52,9 @@ Show Selector Alert
 Show Download Alert
 
 ```kotlin
-        val dialog = DownloadAlert("En progreso", "Sincronizando usuarios")
-        dialog.show()
+        val alert = DownloadAlert("En progreso", "Sincronizando usuarios")
+        alert.show()
 
-        //..
-        ..//
-
+        // Updating Alert
         dialog.updateProgress(1, 50)
-
-        //..
-        ..//
-
-        dialog.updateProgress(50,50)
 ```
