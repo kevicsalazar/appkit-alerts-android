@@ -2,6 +2,7 @@ package com.kevicsalazar.appkit_alerts
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.alert_selector.view.*
 
@@ -23,7 +24,10 @@ class SelectorAlert(context: Context) : BaseAlert(context) {
 
         with(mAlertView) {
 
-            tvTitle.text = titleText
+            titleText?.let {
+                tvTitle.text = it
+                tvTitle.visibility = View.VISIBLE
+            }
 
             val aa: ArrayAdapter<String>
             aa = ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, itemList)

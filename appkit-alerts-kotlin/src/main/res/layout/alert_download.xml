@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="290dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:background="@drawable/bg_dialog"
-    android:orientation="vertical"
-    android:padding="16dp">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="290dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/bg_dialog"
+              android:orientation="vertical"
+              android:padding="16dp">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -39,16 +39,18 @@
         android:layout_gravity="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        tools:text="En progreso" />
+        android:visibility="gone"
+        tools:text="En progreso"/>
 
     <TextView
         android:id="@+id/tvContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="14sp"
-        tools:text="Sincronizando usuarios" />
+        tools:text="Sincronizando usuarios"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -57,7 +59,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.FlatDialog"
         tools:max="100"
-        tools:progress="10" />
+        tools:progress="10"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -68,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            tools:text="10%" />
+            tools:text="10%"/>
 
         <TextView
             android:id="@+id/tvStatusProgress"
@@ -76,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textSize="12sp"
-            tools:text="5/50" />
+            tools:text="5/50"/>
 
     </FrameLayout>
 

@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         btnAlert3.setOnClickListener {
             InputTextAlert("Ingresar", "Nombre") {
-                confirmButton("OK") { dialog, input ->
+                confirmButtonWithText("OK") { dialog, input ->
                     dismiss()
                 }
                 cancelButton("Cancelar")
@@ -69,6 +69,17 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }, 5000)
 
+        }
+
+        btnAlert6.setOnClickListener {
+            Alert(content = "Sincronizando...", type = AlertType.Progress).show()
+        }
+
+        btnAlert7.setOnClickListener {
+            Alert("Aviso", "No hay internet") {
+                iconResId = R.drawable.ic_cloud_outline_off
+                confirmButton("OK")
+            }.show()
         }
 
     }

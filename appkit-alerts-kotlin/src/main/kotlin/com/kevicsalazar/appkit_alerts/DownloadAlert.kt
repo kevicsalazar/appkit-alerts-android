@@ -5,6 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.alert_download.view.*
 import android.animation.AnimatorSet
 import android.animation.AnimatorInflater
+import android.view.View
 
 
 /**
@@ -23,8 +24,15 @@ class DownloadAlert(context: Context) : BaseAlert(context) {
 
         with(mAlertView) {
 
-            tvTitle.text = titleText
-            tvContent.hint = contentText
+            titleText?.let {
+                tvTitle.text = it
+                tvTitle.visibility = View.VISIBLE
+            }
+
+            contentText?.let {
+                tvContent.text = it
+                tvContent.visibility = View.VISIBLE
+            }
 
             progressBar.isIndeterminate = true
 

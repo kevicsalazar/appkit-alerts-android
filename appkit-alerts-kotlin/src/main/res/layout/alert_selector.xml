@@ -15,6 +15,7 @@
         android:layout_gravity="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:visibility="gone"
         tools:text="Lista"/>
 
     <ListView
