@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:visibility="gone"
@@ -46,10 +47,10 @@
         android:id="@+id/tvContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="14sp"
+        android:visibility="gone"
         tools:text="Sincronizando usuarios"/>
 
     <ProgressBar
