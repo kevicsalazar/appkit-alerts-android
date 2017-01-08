@@ -54,4 +54,24 @@ class DownloadAlert(context: Context) : BaseAlert(context) {
         }
     }
 
+    private fun reset() {
+        with(mAlertView) {
+            progressBar.isIndeterminate = true
+            progressBar.progress = 0
+            progressBar.max = 0
+            tvPercentProgress.text = ""
+            tvStatusProgress.text = ""
+        }
+    }
+
+    override fun cancel() {
+        reset()
+        super.cancel()
+    }
+
+    override fun dismiss() {
+        reset()
+        super.dismiss()
+    }
+
 }

@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.kevicsalazar.sample.appkit_alerts"
         minSdkVersion 14
@@ -26,6 +26,6 @@ android {
 
 dependencies {
     compile project(':appkit-alerts-kotlin')
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.6'
 }
