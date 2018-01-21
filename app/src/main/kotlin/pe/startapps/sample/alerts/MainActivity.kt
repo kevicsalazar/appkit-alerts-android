@@ -1,12 +1,11 @@
-package com.kevicsalazar.sample.appkit_alerts
+package pe.startapps.sample.alerts
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.kevicsalazar.appkit_alerts.ext.*
-
 import kotlinx.android.synthetic.main.activity_main.*
+import pe.startapps.alerts.ext.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,20 +14,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnAlert1.setOnClickListener {
-            Alert("Aviso", "Se ingresó correctamente") {
+            alert("Aviso", "Se ingresó correctamente") {
                 confirmButton("OK")
             }.show()
         }
 
         btnAlert2.setOnClickListener {
-            Alert("Aviso", "Seguro que desea eliminarlo", AlertType.Warning) {
+            alert("Aviso", "Seguro que desea eliminarlo", AlertType.Warning) {
                 confirmButton("Sí, borrar")
             }.show()
         }
 
         btnAlert3.setOnClickListener {
-            InputTextAlert("Ingresar", "Nombre") {
-                confirmButtonWithText("OK") { dialog, input ->
+            inputTextAlert("Ingresar", "Nombre") {
+                confirmButtonWithText("OK") { _, _ ->
                     dismiss()
                 }
                 cancelButton("Cancelar")
@@ -38,14 +37,14 @@ class MainActivity : AppCompatActivity() {
         val users = listOf("Kevin", "Kelly", "Juan", "Cristina")
 
         btnAlert4.setOnClickListener {
-            SelectorAlert("Aviso", users) {
+            selectorAlert("Aviso", users) {
                 Log.e("Selected", users[it])
             }.show()
         }
 
         btnAlert5.setOnClickListener {
 
-            val dialog = DownloadAlert("En progreso", "Sincronizando usuarios")
+            val dialog = downloadAlert("En progreso", "Sincronizando usuarios")
             dialog.show()
 
             Handler().postDelayed({
@@ -72,17 +71,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnAlert6.setOnClickListener {
-            Alert(content = "Sincronizando...", type = AlertType.Progress).show()
+            alert(content = "Sincronizando...", type = AlertType.Progress).show()
         }
 
         btnAlert7.setOnClickListener {
-            Alert("Aviso", "No hay internet") {
+            alert("Aviso", "No hay internet") {
                 iconResId = R.drawable.ic_cloud_outline_off
                 confirmButton("OK")
             }.show()
         }
 
-    }
+        btnAlert8.setOnClickListener {
+            val alert = alert("Aviso", "Content") {
+                confirmButton("OK")
+            }
+            alert.show()
+            Handler().postDelayed({
+                alert.titleText = "New title"
+                alert.contentText = "New content"
+                alert.update()
+            }, 2500)
+        }
 
+    }
 
 }

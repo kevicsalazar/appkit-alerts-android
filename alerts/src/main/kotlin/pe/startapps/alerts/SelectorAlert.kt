@@ -1,4 +1,4 @@
-package com.kevicsalazar.appkit_alerts
+package pe.startapps.alerts
 
 import android.content.Context
 import android.os.Bundle
@@ -29,12 +29,10 @@ class SelectorAlert(context: Context) : BaseAlert(context) {
                 tvTitle.visibility = View.VISIBLE
             }
 
-            val aa: ArrayAdapter<String>
-            aa = ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, itemList)
-            listview.adapter = aa
+            listview.adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, itemList)
 
             onItemClick?.let {
-                listview.setOnItemClickListener { adapterView, view, i, l ->
+                listview.setOnItemClickListener { _, _, i, _ ->
                     onItemClick!!.invoke(i)
                     this@SelectorAlert.dismiss()
                 }

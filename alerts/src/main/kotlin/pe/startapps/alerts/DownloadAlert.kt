@@ -1,4 +1,4 @@
-package com.kevicsalazar.appkit_alerts
+package pe.startapps.alerts
 
 import android.content.Context
 import android.os.Bundle

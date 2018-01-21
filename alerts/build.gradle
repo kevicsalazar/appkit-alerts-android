@@ -3,17 +3,17 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
-group = 'com.github.kevicsalazar'
+group = 'pe.startapps'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0.1"
+        targetSdkVersion 27
+        versionCode 110
+        versionName "1.1.0"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -28,6 +28,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.6'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.2.20'
 }

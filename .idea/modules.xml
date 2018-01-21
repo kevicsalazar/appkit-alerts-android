@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AppKit-Alerts-Kotlin.iml" filepath="$PROJECT_DIR$/AppKit-Alerts-Kotlin.iml" />
+      <module fileurl="file://C:\Projects\AppKit-Alerts-Kotlin\AppKit-Alerts-Kotlin.iml" filepath="C:\Projects\AppKit-Alerts-Kotlin\AppKit-Alerts-Kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alerts/appkit-alerts-kotlin.iml" filepath="$PROJECT_DIR$/alerts/appkit-alerts-kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appkit-alerts-kotlin/appkit-alerts-kotlin.iml" filepath="$PROJECT_DIR$/appkit-alerts-kotlin/appkit-alerts-kotlin.iml" />
+      <module fileurl="file://C:\Projects\AppKit-Alerts-Kotlin\app\app.iml" filepath="C:\Projects\AppKit-Alerts-Kotlin\app\app.iml" />
+      <module fileurl="file://C:\Projects\AppKit-Alerts-Kotlin\appkit-alerts-kotlin\appkit-alerts-kotlin.iml" filepath="C:\Projects\AppKit-Alerts-Kotlin\appkit-alerts-kotlin\appkit-alerts-kotlin.iml" />
     </modules>
   </component>
 </project>

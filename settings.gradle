@@ -1,1 +1,1 @@
-include ':app', ':appkit-alerts-kotlin'
+include ':app', ':alerts'
